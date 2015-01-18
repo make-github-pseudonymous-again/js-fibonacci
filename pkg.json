@@ -1,0 +1,17 @@
+{
+	"ns": "fibonacci",
+	"debug": false,
+	"code": {
+		"test": [
+			"test",
+			"js"
+		],
+		"main": [
+			"js",
+			"dist",
+			"fibonacci.js"
+		]
+	},
+	"out": "js/dist/",
+	"src": "js/src/"
+}
