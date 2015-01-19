@@ -20,6 +20,4 @@ test( "array" , function ( ) {
 		ok( number.eq( a[i] , number.add( a[i-2] , a[i-1] ) ) ) ;
 	}
 
-	console.log( a ) ;
-
 } ) ;
