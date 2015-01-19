@@ -311,7 +311,7 @@ var __rarray__ = function ( add ) {
 
 	/**
 	 * @param {size} n >= 0
-	 * @param {integer array} a initialized to [ zero , one ]
+	 * @param {integer array} a of size n + 1 initialized to [ zero , one , ... ]
 	 */
 
 	var rarray = function ( n , a ) {
