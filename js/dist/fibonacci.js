@@ -190,7 +190,9 @@ exports.__formula__ = __formula__ ;
 /* js/src/matrix.js */
 
 var __matrix__ = function ( zero , one , mul , add ) {
-
+	/**
+	 * @param {nth} n > 0
+	 */
 	var matrix = function ( n ) {
 
 		// We can compute simultaneously,
