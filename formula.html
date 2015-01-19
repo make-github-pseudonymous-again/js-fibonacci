@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="en"><head><title>formula</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="formula"><meta name="groc-project-path" content="js/src/formula.js"><meta name="groc-github-url" content="https://github.com/aureooms/js-fibonacci"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/aureooms/js-fibonacci/blob/master/js/src/formula.js">js/src/formula.js</a></div></div><div id="document"><div class="segment"><div class="comments doc-section"><div class="wrapper"><p>Parameters:</p>
+<ul>
+<li><p><strong>zero must be a function.</strong><br/>(number constructor for 0)</p>
+</li>
+<li><p><strong>one must be a function.</strong><br/>(number constructor for 1)</p>
+</li>
+<li><p><strong>minusone must be a function.</strong><br/>(number constructor for -1)</p>
+</li>
+<li><p><strong>five must be a number.</strong><br/>(constant number reference constructor for 5)</p>
+</li>
+<li><p><strong>add must be a function.</strong><br/>(number addition binary operator)</p>
+</li>
+<li><p><strong>mul must be a function.</strong><br/>(number multiplication binary operator)</p>
+</li>
+<li><p><strong>sqr must be a function.</strong><br/>(number squaring unary operator)</p>
+</li>
+<li><p><strong>mul2 must be a function.</strong><br/>(number multiplication by 2 unary operator)</p>
+</li>
+<li><p><strong>sub must be a function.</strong><br/>(number subtraction binary operator)</p>
+</li>
+<li><p><strong>shr must be a function.</strong><br/>(number right shift binary operator)</p>
+</li>
+</ul></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> __formula__ = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( zero , one , minusone , five , add , mul , shr , sqr , mul2 )</span> {</span></div></div></div><div class="segment"><div class="comments doc-section"><div class="wrapper"><p>Parameters:</p>
+<ul>
+<li><strong>n must be a nth.</strong><br/>(&gt; 0)</li>
+</ul></div></div><div class="code"><div class="wrapper">	<span class="hljs-keyword">var</span> formula = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( n )</span> {</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The closed form formula for the nth Fibonacci numbers is,
+     <em>  .</em>. n               n
+      _|<em>/            \</em>|<em>/
+        |       __</em>      |
+        |                |</p>
+<pre><code>___________________________
+ _  ._.
+  \_|_/            \_|_/
+    |       ___      |
+    |                |</code></pre>
+<p>where phi = 1 + sqrt(5) and psi = 1 - sqrt(5)</p></div></div><div class="code"><div class="wrapper">		<span class="hljs-keyword">var</span> i , a , b , c , d , w , x , y , z , w2 , x2 , y2 , z2 ;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>phi = ( a + bi ) / 2 , psi = ( c + di ) / 2</p></div></div><div class="code"><div class="wrapper">		a = one( ) ; b = one( ) ;
+		c = one( ) ; d = minusone( ) ;
+
+		w = one( ) ; x = zero( ) ;
+		y = one( ) ; z = zero( ) ;
+
+		i = n ;
+
+		<span class="hljs-keyword">while</span> ( <span class="hljs-literal">true</span> ) {
+
+			<span class="hljs-keyword">if</span> ( i % <span class="hljs-number">2</span> === <span class="hljs-number">1</span> ) {
+
+				x2 = add( mul( a , x ) , mul( b , w ) ) ;
+				z2 = add( mul( c , z ) , mul( d , y ) ) ;
+
+				<span class="hljs-keyword">if</span> ( i === <span class="hljs-number">1</span> ) <span class="hljs-keyword">break</span> ;
+
+				w2 = add( mul( a , w ) , mul( mul( five , b ) , x ) ) ;
+				y2 = add( mul( c , y ) , mul( mul( five , d ) , z ) ) ;
+
+				w = w2 ; x = x2 ; y = y2 ; z = z2 ;
+
+			}
+
+			a2 = add( sqr( a ) , mul( five , sqr( b ) ) ) ;
+			b2 = mul2( mul( a , b ) ) ;
+
+			c2 = add( sqr( c ) , mul( five , sqr( d ) ) ) ;
+			d2 = mul2( mul( c , d ) ) ;
+
+			a = a2 ; b = b2 ; c = c2 ; d = d2 ;
+
+			i &gt;&gt;&gt;= <span class="hljs-number">1</span> ;
+
+		}
+
+		<span class="hljs-keyword">return</span> shr( sub( x2 , z2 ) , n ) ;
+
+	} ;
+
+	<span class="hljs-keyword">return</span> formula ;
+
+} ;
+
+exports.__formula__ = __formula__ ;</div></div></div></div></body></html>
