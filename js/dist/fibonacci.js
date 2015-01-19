@@ -38,7 +38,7 @@ var __array__ = function ( add ) {
 
 	/**
 	 * @param {size} n >= 2
-	 * @param {integer array} a initialized to [ zero , one ]
+	 * @param {integer array} a of size n + 1 initialized to [ zero , one , ... ]
 	 */
 
 	var array = function ( n , a ) {
@@ -46,10 +46,8 @@ var __array__ = function ( add ) {
 		var i ;
 
 		for ( i = 2 ; i <= n ; ++i ) {
-			array[i] = add( array[i-2] , array[i-1] ) ;
+			a[i] = add( a[i-2] , a[i-1] ) ;
 		}
-
-		return array[n] ;
 
 	} ;
 

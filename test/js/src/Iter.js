@@ -7,7 +7,7 @@ test( "Iter" , function ( ) {
 
 	Iter = fibonacci.__Iter__( number.add ) ;
 
-	n = 47 ;
+	n = 46 ;
 
 	a = number.zero( ) ;
 	b = number.one( ) ;
@@ -17,7 +17,7 @@ test( "Iter" , function ( ) {
 	ok( number.eq( it.next( ).value , a ) , "F0" ) ;
 	ok( number.eq( it.next( ).value , b ) , "F1" ) ;
 
-	for ( i = 2 ; i < n ; ++i ) {
+	for ( i = 2 ; i <= n ; ++i ) {
 
 		c = it.next( ).value ;
 
