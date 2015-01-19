@@ -1,32 +1,33 @@
 {
-	"description": "fibonacci numbers code bricks for JavaScript",
-	"version": "0.0.1",
-	"devDependencies": {
-		"aureooms-node-package": "^1.1.3"
-	},
-	"main": "js/dist/fibonacci.js",
-	"author": "aureooms",
-	"dependencies": {},
-	"scripts": {
-		"build": "./node_modules/.bin/aureooms-node-package-build",
-		"test": "./node_modules/.bin/aureooms-node-package-test",
-		"doc": "./node_modules/.bin/groc"
-	},
-	"keywords": [
-		"bricks",
-		"fibonacci",
-		"javascript",
-		"js",
-		"numbers"
-	],
-	"name": "aureooms-js-fibonacci",
-	"license": "AGPL-3.0",
-	"bugs": {
-		"url": "https://github.com/aureooms/js-fibonacci/issues"
-	},
-	"repository": {
-		"url": "https://github.com/aureooms/js-fibonacci.git",
-		"type": "git"
-	},
-	"homepage": "http://aureooms.github.io/js-fibonacci/"
+  "description": "fibonacci numbers code bricks for JavaScript",
+  "version": "0.0.1",
+  "devDependencies": {
+    "aureooms-js-number": "^1.2.0",
+    "aureooms-node-package": "^1.1.3"
+  },
+  "main": "js/dist/fibonacci.js",
+  "author": "aureooms",
+  "dependencies": {},
+  "scripts": {
+    "build": "./node_modules/.bin/aureooms-node-package-build",
+    "test": "./node_modules/.bin/aureooms-node-package-test",
+    "doc": "./node_modules/.bin/groc"
+  },
+  "keywords": [
+    "bricks",
+    "fibonacci",
+    "javascript",
+    "js",
+    "numbers"
+  ],
+  "name": "aureooms-js-fibonacci",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/aureooms/js-fibonacci/issues"
+  },
+  "repository": {
+    "url": "https://github.com/aureooms/js-fibonacci.git",
+    "type": "git"
+  },
+  "homepage": "http://aureooms.github.io/js-fibonacci/"
 }
