@@ -1,6 +1,6 @@
 {
 	"description": "fibonacci numbers code bricks for JavaScript",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"devDependencies": {
 		"aureooms-js-array": "^1.1.0",
 		"aureooms-js-number": "^1.4.0",
