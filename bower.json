@@ -12,7 +12,7 @@
 	],
 	"license": "AGPL-3.0",
 	"description": "fibonacci numbers code bricks for JavaScript",
-	"version": "0.2.1",
+	"version": "1.0.0",
 	"name": "aureooms-js-fibonacci",
 	"homepage": "http://aureooms.github.io/js-fibonacci/",
 	"main": "js/dist/fibonacci.js"
