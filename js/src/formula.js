@@ -1,16 +1,16 @@
 /**
  * @param {function} zero number constructor for 0
  * @param {function} one number constructor for 1
- * @param {function} minusone number constructor for -1
+ * @param {function} negativeone number constructor for -1
  * @param {number} five constant number reference constructor for 5
  * @param {function} add number addition binary operator
  * @param {function} mul number multiplication binary operator
- * @param {function} sqr number squaring unary operator
+ * @param {function} pow2 number squaring unary operator
  * @param {function} mul2 number multiplication by 2 unary operator
  * @param {function} sub number subtraction binary operator
- * @param {function} shr number right shift binary operator
+ * @param {function} shu number right shift binary operator
  */
-var __formula__ = function ( zero , one , minusone , five , add , mul , shr , sqr , mul2 ) {
+var __formula__ = function ( zero , one , negativeone , five , add , mul , pow2 , mul2 , sub , shu ) {
 
 	/**
 	 * @param {nth} n > 0
@@ -35,12 +35,12 @@ var __formula__ = function ( zero , one , minusone , five , add , mul , shr , sq
 		//
 		//
 
-		var i , a , b , c , d , w , x , y , z , w2 , x2 , y2 , z2 ;
+		var i , a , b , c , d , w , x , y , z , a2 , b2 , c2 , d2 , w2 , x2 , y2 , z2 ;
 
 		// phi = ( a + bi ) / 2 , psi = ( c + di ) / 2
 
 		a = one( ) ; b = one( ) ;
-		c = one( ) ; d = minusone( ) ;
+		c = one( ) ; d = negativeone( ) ;
 
 		w = one( ) ; x = zero( ) ;
 		y = one( ) ; z = zero( ) ;
@@ -63,10 +63,10 @@ var __formula__ = function ( zero , one , minusone , five , add , mul , shr , sq
 
 			}
 
-			a2 = add( sqr( a ) , mul( five , sqr( b ) ) ) ;
+			a2 = add( pow2( a ) , mul( five , pow2( b ) ) ) ;
 			b2 = mul2( mul( a , b ) ) ;
 
-			c2 = add( sqr( c ) , mul( five , sqr( d ) ) ) ;
+			c2 = add( pow2( c ) , mul( five , pow2( d ) ) ) ;
 			d2 = mul2( mul( c , d ) ) ;
 
 			a = a2 ; b = b2 ; c = c2 ; d = d2 ;
@@ -75,7 +75,7 @@ var __formula__ = function ( zero , one , minusone , five , add , mul , shr , sq
 
 		}
 
-		return shr( sub( x2 , z2 ) , n ) ;
+		return shu( sub( x2 , z2 ) , n ) ;
 
 	} ;
 
