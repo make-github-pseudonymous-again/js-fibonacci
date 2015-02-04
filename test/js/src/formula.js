@@ -11,11 +11,11 @@ test( "formula" , function ( ) {
 		number.zero ,
 		number.one ,
 		number.negativeone ,
-		number.five( ) ,
 		number.add ,
 		number.mul ,
 		number.pow2 ,
 		number.mul2 ,
+		number.mul5 ,
 		number.sub ,
 		// number.shu
 		function ( a , n ) { return a / Math.pow( 2 , n ) ; }

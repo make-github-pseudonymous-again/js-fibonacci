@@ -100,15 +100,15 @@ exports.__callback__ = __callback__ ;
  * @param {function} zero number constructor for 0
  * @param {function} one number constructor for 1
  * @param {function} negativeone number constructor for -1
- * @param {number} five constant number reference constructor for 5
  * @param {function} add number addition binary operator
  * @param {function} mul number multiplication binary operator
  * @param {function} pow2 number squaring unary operator
  * @param {function} mul2 number multiplication by 2 unary operator
+ * @param {function} mul5 number multiplication by 5 unary operator
  * @param {function} sub number subtraction binary operator
  * @param {function} shu number right shift binary operator
  */
-var __formula__ = function ( zero , one , negativeone , five , add , mul , pow2 , mul2 , sub , shu ) {
+var __formula__ = function ( zero , one , negativeone , add , mul , pow2 , mul2 , mul5 , sub , shu ) {
 
 	/**
 	 * @param {nth} n > 0
@@ -154,17 +154,17 @@ var __formula__ = function ( zero , one , negativeone , five , add , mul , pow2 
 
 				if ( i === 1 ) break ;
 
-				w2 = add( mul( a , w ) , mul( mul( five , b ) , x ) ) ;
-				y2 = add( mul( c , y ) , mul( mul( five , d ) , z ) ) ;
+				w2 = add( mul( a , w ) , mul( mul5( b ) , x ) ) ;
+				y2 = add( mul( c , y ) , mul( mul5( d ) , z ) ) ;
 
 				w = w2 ; x = x2 ; y = y2 ; z = z2 ;
 
 			}
 
-			a2 = add( pow2( a ) , mul( five , pow2( b ) ) ) ;
+			a2 = add( pow2( a ) , mul5( pow2( b ) ) ) ;
 			b2 = mul2( mul( a , b ) ) ;
 
-			c2 = add( pow2( c ) , mul( five , pow2( d ) ) ) ;
+			c2 = add( pow2( c ) , mul5( pow2( d ) ) ) ;
 			d2 = mul2( mul( c , d ) ) ;
 
 			a = a2 ; b = b2 ; c = c2 ; d = d2 ;
