@@ -1,0 +1,11 @@
+{
+	"name": "aureooms-js-fibonacci",
+	"repo": "aureooms/js-fibonacci",
+	"scripts": [
+		"js/dist/fibonacci.js"
+	],
+	"version": "2.0.0",
+	"description": "fibonacci numbers code bricks for JavaScript",
+	"main": "js/dist/fibonacci.js",
+	"license": "AGPL-3.0"
+}
