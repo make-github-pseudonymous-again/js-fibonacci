@@ -7,13 +7,13 @@ test( "nth" , function ( ) {
 
 	n = 46 ;
 
-	nth = fibonacci.__nth__( number.iadd , number.zero , number.one ) ;
+	nth = fibonacci.__nth__( number.iadd , number.$0 , number.$1 ) ;
 
-	a = number.zero( ) ;
+	a = number.$0( ) ;
 
 	ok( number.eq( nth( 0 ) , a ) ) ;
 
-	b = number.one( ) ;
+	b = number.$1( ) ;
 
 	ok( number.eq( nth( 1 ) , b ) ) ;
 

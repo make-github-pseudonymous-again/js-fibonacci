@@ -7,10 +7,10 @@ test( "matrix" , function ( ) {
 
 	n = 45 ;
 
-	matrix = fibonacci.__matrix__( number.zero , number.one , number.mul , number.add ) ;
+	matrix = fibonacci.__matrix__( number.$0 , number.$1 , number.mul , number.add ) ;
 
-	a = number.zero( ) ;
-	b = number.one( ) ;
+	a = number.$0( ) ;
+	b = number.$1( ) ;
 
 	for ( i = 1 ; i <= n ; ++i ) {
 

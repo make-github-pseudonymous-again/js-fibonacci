@@ -8,9 +8,9 @@ test( "formula" , function ( ) {
 	n = 46 ;
 
 	formula = fibonacci.__formula__(
-		number.zero ,
-		number.one ,
-		number.negativeone ,
+		number.$0 ,
+		number.$1 ,
+		number.$_1 ,
 		number.add ,
 		number.mul ,
 		number.pow2 ,
@@ -21,8 +21,8 @@ test( "formula" , function ( ) {
 		function ( a , n ) { return a / Math.pow( 2 , n ) ; }
 	) ;
 
-	a = number.zero( ) ;
-	b = number.one( ) ;
+	a = number.$0( ) ;
+	b = number.$1( ) ;
 
 	x = formula( 1 ) ;
 

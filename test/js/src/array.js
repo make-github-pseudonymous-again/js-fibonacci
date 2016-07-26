@@ -9,8 +9,8 @@ test( "array" , function ( ) {
 	n = 46 ;
 
 	a = array.alloc( n + 1 ) ;
-	a[0] = number.zero( ) ;
-	a[1] = number.one( ) ;
+	a[0] = number.$0( ) ;
+	a[1] = number.$1( ) ;
 
 	fibarray = fibonacci.__array__( number.add ) ;
 

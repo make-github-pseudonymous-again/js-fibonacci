@@ -5,7 +5,7 @@ test( "callback" , function ( ) {
 
 	number = require( "aureooms-js-number" ) ;
 
-	callback = fibonacci.__callback__( number.iadd , number.zero , number.one ) ;
+	callback = fibonacci.__callback__( number.iadd , number.$0 , number.$1 ) ;
 
 	cb = function ( f ) {
 
@@ -15,7 +15,7 @@ test( "callback" , function ( ) {
 
 		if ( i === 0 ) {
 
-			a = number.zero( ) ;
+			a = number.$0( ) ;
 
 			ok( number.eq( f , a ) ) ;
 
@@ -25,7 +25,7 @@ test( "callback" , function ( ) {
 
 		if ( i === 1 ) {
 
-			b = number.one( ) ;
+			b = number.$1( ) ;
 
 			ok( number.eq( f , b ) ) ;
 

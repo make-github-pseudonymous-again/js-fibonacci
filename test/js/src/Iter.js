@@ -9,8 +9,8 @@ test( "Iter" , function ( ) {
 
 	n = 46 ;
 
-	a = number.zero( ) ;
-	b = number.one( ) ;
+	a = number.$0( ) ;
+	b = number.$1( ) ;
 
 	it = new Iter( a , b ) ;
 

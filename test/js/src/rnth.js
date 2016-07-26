@@ -7,13 +7,13 @@ test( "rnth" , function ( ) {
 
 	n = 10 ;
 
-	rnth = fibonacci.__rnth__( number.iadd , number.zero , number.one ) ;
+	rnth = fibonacci.__rnth__( number.iadd , number.$0 , number.$1 ) ;
 
-	a = number.zero( ) ;
+	a = number.$0( ) ;
 
 	ok( number.eq( rnth( 0 ) , a ) ) ;
 
-	b = number.one( ) ;
+	b = number.$1( ) ;
 
 	ok( number.eq( rnth( 1 ) , b ) ) ;
 
