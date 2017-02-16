@@ -3,7 +3,7 @@
 
 fibonacci numbers code bricks for JavaScript
 
-[![NPM license](https://img.shields.io/npm/l/@aureooms/js-fibonacci.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-fibonacci/master/LICENSE)
+[![License](https://img.shields.io/github/license/aureooms/js-fibonacci.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-fibonacci/master/LICENSE)
 [![NPM version](https://img.shields.io/npm/v/@aureooms/js-fibonacci.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-fibonacci)
 [![Bower version](https://img.shields.io/bower/v/@aureooms/js-fibonacci.svg?style=flat)](http://bower.io/search/?q=@aureooms/js-fibonacci)
 [![Build Status](https://img.shields.io/travis/aureooms/js-fibonacci.svg?style=flat)](https://travis-ci.org/aureooms/js-fibonacci)
