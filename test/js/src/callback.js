@@ -3,7 +3,7 @@ test( "callback" , function ( ) {
 
 	var number , i , n , a , b , c , callback , cb ;
 
-	number = require( "aureooms-js-number" ) ;
+	number = require( "@aureooms/js-number" ) ;
 
 	callback = fibonacci.__callback__( number.iadd , number.$0 , number.$1 ) ;
 

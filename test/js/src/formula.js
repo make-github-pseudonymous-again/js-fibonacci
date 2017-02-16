@@ -3,7 +3,7 @@ test( "formula" , function ( ) {
 
 	var number , i , n , a , b , c , formula , x ;
 
-	number = require( "aureooms-js-number" ) ;
+	number = require( "@aureooms/js-number" ) ;
 
 	n = 46 ;
 

@@ -3,7 +3,7 @@ test( "Iter" , function ( ) {
 
 	var number , Iter , it , i , n , a , b , c ;
 
-	number = require( "aureooms-js-number" ) ;
+	number = require( "@aureooms/js-number" ) ;
 
 	Iter = fibonacci.__Iter__( number.add ) ;
 

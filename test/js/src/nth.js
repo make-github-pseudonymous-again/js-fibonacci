@@ -3,7 +3,7 @@ test( "nth" , function ( ) {
 
 	var number , i , n , a , b , c , nth ;
 
-	number = require( "aureooms-js-number" ) ;
+	number = require( "@aureooms/js-number" ) ;
 
 	n = 46 ;
 

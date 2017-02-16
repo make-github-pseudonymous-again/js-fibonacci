@@ -3,8 +3,8 @@ test( "rarray" , function ( ) {
 
 	var array , number , i , n , a , rarray , f ;
 
-	array = require( "aureooms-js-array" ) ;
-	number = require( "aureooms-js-number" ) ;
+	array = require( "@aureooms/js-array" ) ;
+	number = require( "@aureooms/js-number" ) ;
 
 	n = 46 ;
 

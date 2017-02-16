@@ -3,7 +3,7 @@ test( "matrix" , function ( ) {
 
 	var number , i , n , a , b , c , matrix , out ;
 
-	number = require( "aureooms-js-number" ) ;
+	number = require( "@aureooms/js-number" ) ;
 
 	n = 45 ;
 

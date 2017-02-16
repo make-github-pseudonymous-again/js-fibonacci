@@ -3,8 +3,8 @@ test( "array" , function ( ) {
 
 	var array , number , i , n , a , fibarray ;
 
-	array = require( "aureooms-js-array" ) ;
-	number = require( "aureooms-js-number" ) ;
+	array = require( "@aureooms/js-array" ) ;
+	number = require( "@aureooms/js-number" ) ;
 
 	n = 46 ;
 
