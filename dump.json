@@ -1,0 +1,1208 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "name": "src/Iter.js",
+    "content": "\nexport function __Iter__ ( add ) {\n\n\tvar Iter = function ( a , b ) {\n\n\t\tthis.a = a ;\n\t\tthis.b = b ;\n\n\t} ;\n\n\tIter.prototype.next = function ( ) {\n\n\t\tvar t ;\n\n\t\tt = this.a ;\n\t\tthis.a = this.b ;\n\t\tthis.b = add( t , this.b ) ;\n\n\t\treturn { value : t , done : false } ;\n\n\t} ;\n\n\treturn Iter ;\n\n}\n\n",
+    "static": true,
+    "longname": "src/Iter.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 1,
+    "kind": "function",
+    "name": "__Iter__",
+    "memberof": "src/Iter.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Iter.js~__Iter__",
+    "access": null,
+    "export": true,
+    "importPath": "@aureooms/js-fibonacci/src/Iter.js",
+    "importStyle": "{__Iter__}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "add",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 2,
+    "kind": "file",
+    "name": "src/array.js",
+    "content": "\nexport function __array__ ( add ) {\n\n\t/**\n\t * @param {size} n >= 2\n\t * @param {integer array} a of size n + 1 initialized to [ zero , one , ... ]\n\t */\n\n\tvar array = function ( n , a ) {\n\n\t\tvar i ;\n\n\t\tfor ( i = 2 ; i <= n ; ++i ) {\n\t\t\ta[i] = add( a[i-2] , a[i-1] ) ;\n\t\t}\n\n\t} ;\n\n\treturn array ;\n\n}\n\n",
+    "static": true,
+    "longname": "src/array.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 3,
+    "kind": "function",
+    "name": "__array__",
+    "memberof": "src/array.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/array.js~__array__",
+    "access": null,
+    "export": true,
+    "importPath": "@aureooms/js-fibonacci/src/array.js",
+    "importStyle": "{__array__}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "add",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 4,
+    "kind": "file",
+    "name": "src/callback.js",
+    "content": "\n\nexport function __callback__ ( iadd , zero , one ) {\n\n\tvar callback = function ( cb ) {\n\n\t\tvar a , b ;\n\n\t\ta = zero( ) ;\n\n\t\tif ( cb( a ) ) return ;\n\n\t\tb = one( ) ;\n\n\t\tif ( cb( b ) ) return ;\n\n\t\twhile ( true ) {\n\n\t\t\ta = iadd( a , b ) ;\n\n\t\t\tif ( cb( a ) ) return ;\n\n\t\t\tb = iadd( b , a ) ;\n\n\t\t\tif ( cb( b ) ) return ;\n\n\t\t}\n\n\t} ;\n\n\treturn callback ;\n\n}\n\n\n",
+    "static": true,
+    "longname": "src/callback.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 5,
+    "kind": "function",
+    "name": "__callback__",
+    "memberof": "src/callback.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/callback.js~__callback__",
+    "access": null,
+    "export": true,
+    "importPath": "@aureooms/js-fibonacci/src/callback.js",
+    "importStyle": "{__callback__}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "iadd",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "zero",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "one",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 6,
+    "kind": "file",
+    "name": "src/formula.js",
+    "content": "/**\n * @param {function} zero number constructor for 0\n * @param {function} one number constructor for 1\n * @param {function} negativeone number constructor for -1\n * @param {function} add number addition binary operator\n * @param {function} mul number multiplication binary operator\n * @param {function} pow2 number squaring unary operator\n * @param {function} mul2 number multiplication by 2 unary operator\n * @param {function} mul5 number multiplication by 5 unary operator\n * @param {function} sub number subtraction binary operator\n * @param {function} shu number right shift binary operator\n */\nexport function __formula__ ( zero , one , negativeone , add , mul , pow2 , mul2 , mul5 , sub , shu ) {\n\n\t/**\n\t * @param {nth} n > 0\n\t */\n\tvar formula = function ( n ) {\n\n\t\t// The closed form formula for the nth Fibonacci numbers is,\n\t\t//\n\t\t//      _  ._. n               n\n\t\t//       \\_|_/            \\_|_/\n\t\t//         |       ___      |\n\t\t//         |                |\n\t\t//\n\t\t//     ___________________________\n\t\t//\n\t\t//      _  ._.\n\t\t//       \\_|_/            \\_|_/\n\t\t//         |       ___      |\n\t\t//         |                |\n\t\t//\n\t\t// where phi = 1 + sqrt(5) and psi = 1 - sqrt(5)\n\t\t//\n\t\t//\n\n\t\tvar i , a , b , c , d , w , x , y , z , a2 , b2 , c2 , d2 , w2 , x2 , y2 , z2 ;\n\n\t\t// phi = ( a + bi ) / 2 , psi = ( c + di ) / 2\n\n\t\ta = one( ) ; b = one( ) ;\n\t\tc = one( ) ; d = negativeone( ) ;\n\n\t\tw = one( ) ; x = zero( ) ;\n\t\ty = one( ) ; z = zero( ) ;\n\n\t\ti = n ;\n\n\t\twhile ( true ) {\n\n\t\t\tif ( i % 2 === 1 ) {\n\n\t\t\t\tx2 = add( mul( a , x ) , mul( b , w ) ) ;\n\t\t\t\tz2 = add( mul( c , z ) , mul( d , y ) ) ;\n\n\t\t\t\tif ( i === 1 ) break ;\n\n\t\t\t\tw2 = add( mul( a , w ) , mul( mul5( b ) , x ) ) ;\n\t\t\t\ty2 = add( mul( c , y ) , mul( mul5( d ) , z ) ) ;\n\n\t\t\t\tw = w2 ; x = x2 ; y = y2 ; z = z2 ;\n\n\t\t\t}\n\n\t\t\ta2 = add( pow2( a ) , mul5( pow2( b ) ) ) ;\n\t\t\tb2 = mul2( mul( a , b ) ) ;\n\n\t\t\tc2 = add( pow2( c ) , mul5( pow2( d ) ) ) ;\n\t\t\td2 = mul2( mul( c , d ) ) ;\n\n\t\t\ta = a2 ; b = b2 ; c = c2 ; d = d2 ;\n\n\t\t\ti >>>= 1 ;\n\n\t\t}\n\n\t\treturn shu( sub( x2 , z2 ) , n ) ;\n\n\t} ;\n\n\treturn formula ;\n\n}\n\n",
+    "static": true,
+    "longname": "src/formula.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 7,
+    "kind": "function",
+    "name": "__formula__",
+    "memberof": "src/formula.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/formula.js~__formula__",
+    "access": null,
+    "export": true,
+    "importPath": "@aureooms/js-fibonacci/src/formula.js",
+    "importStyle": "{__formula__}",
+    "description": "",
+    "lineNumber": 13,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "zero",
+        "description": "number constructor for 0"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "one",
+        "description": "number constructor for 1"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "negativeone",
+        "description": "number constructor for -1"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "add",
+        "description": "number addition binary operator"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "mul",
+        "description": "number multiplication binary operator"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pow2",
+        "description": "number squaring unary operator"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "mul2",
+        "description": "number multiplication by 2 unary operator"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "mul5",
+        "description": "number multiplication by 5 unary operator"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "sub",
+        "description": "number subtraction binary operator"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "shu",
+        "description": "number right shift binary operator"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 8,
+    "kind": "file",
+    "name": "src/generator.js",
+    "content": "\n// waiting for es6\n// TODO it's 2017, it's there, do it!\n",
+    "static": true,
+    "longname": "src/generator.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 9,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "export * from './Iter' ;\nexport * from './array' ;\nexport * from './callback' ;\nexport * from './formula' ;\nexport * from './generator' ;\nexport * from './matrix' ;\nexport * from './nth' ;\nexport * from './rarray' ;\nexport * from './rnth' ;\n",
+    "static": true,
+    "longname": "src/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 10,
+    "kind": "file",
+    "name": "src/matrix.js",
+    "content": "\nexport function __matrix__ ( zero , one , mul , add ) {\n\t/**\n\t * @param {nth} n > 0\n\t */\n\tvar matrix = function ( n ) {\n\n\t\t// We can compute simultaneously,\n\t\t//\n\t\t//       a   =      b\n\t\t//       b   =  a + b\n\t\t//\n\t\t// Using matrix multiplication,\n\t\t//\n\t\t//       X        M\n\t\t//       :        :\n\t\t//     | a |   | 0 1 |\n\t\t//     | b | . | 1 1 |\n\t\t//\n\t\t// With this we can compute F_{n-1} and F_n using matrix exponentiation\n\t\t//\n\t\t//                                    n\n\t\t//     | F_{n-1} |     | 0 |   | 0 1 |\n\t\t//     |   F_n   |  =  | 1 | . | 1 1 |\n\t\t//\n\t\t// Matrix exponentiation can be achieved in log n steps using the\n\t\t// binary decomposition of n\n\t\t//\n\t\t//     n = ( n % 2 ) * 1 + ( ( n >> 1 ) % 2 ) * 2 + ... + ( ( n >> i ) % 2 ) * ( i + 1 ) + ...\n\t\t//\n\t\t// And computing M raised to successive powers of 2,\n\t\t//\n\t\t//                               2\n\t\t//            n     /     (n//2) \\           (n%2)\n\t\t//     | 0 1 |     |  | 0 1 |     |      | 0 1 |\n\t\t//     | 1 1 |  =   \\ | 1 1 |    /   .   | 1 1 |\n\t\t//\n\t\t// The matrix is encoded as\n\t\t//\n\t\t//     | t u |\n\t\t//     | v w |\n\n\t\tvar a , b , t , u , v , w , a2 , b2 , t2 , u2 , v2 , w2 ;\n\n\t\ta = zero( ) ; b = one( ) ;\n\t\tt = zero( ) ; u = one( ) ; v = one( ) ; w = one( ) ;\n\n\t\twhile ( true ) {\n\n\t\t\tif ( n % 2 === 1 ) {\n\n\t\t\t\ta2 = add( mul( a , t ) , mul( b , u ) ) ;\n\t\t\t\tb2 = add( mul( a , v ) , mul( b , w ) ) ;\n\n\t\t\t\ta = a2 ; b = b2 ;\n\n\t\t\t\tif ( n === 1 ) break ;\n\n\t\t\t}\n\n\n\t\t\tt2 = add( mul( t , t ) , mul( u , v ) ) ;\n\t\t\tu2 = add( mul( t , u ) , mul( u , w ) ) ;\n\t\t\tv2 = add( mul( v , t ) , mul( w , v ) ) ;\n\t\t\tw2 = add( mul( v , u ) , mul( w , w ) ) ;\n\n\t\t\tt = t2 ; u = u2 ; v = v2 ; w = w2 ;\n\n\t\t\tn >>>= 1 ;\n\n\t\t}\n\n\t\treturn [ a , b ] ;\n\n\t} ;\n\n\treturn matrix ;\n\n}\n\n",
+    "static": true,
+    "longname": "src/matrix.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 11,
+    "kind": "function",
+    "name": "__matrix__",
+    "memberof": "src/matrix.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/matrix.js~__matrix__",
+    "access": null,
+    "export": true,
+    "importPath": "@aureooms/js-fibonacci/src/matrix.js",
+    "importStyle": "{__matrix__}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "zero",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "one",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "mul",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "add",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 12,
+    "kind": "file",
+    "name": "src/nth.js",
+    "content": "\n\nexport function __nth__ ( iadd , zero , one ) {\n\n\tvar nth = function ( n ) {\n\n\t\tvar a , b ;\n\n\t\ta = zero( ) ;\n\n\t\tif ( n-- === 0 ) return a ;\n\n\t\tb = one( ) ;\n\n\t\tif ( n-- === 0 ) return b ;\n\n\t\twhile ( true ) {\n\n\t\t\ta = iadd( a , b ) ;\n\n\t\t\tif ( n-- === 0 ) return a ;\n\n\t\t\tb = iadd( b , a ) ;\n\n\t\t\tif ( n-- === 0 ) return b ;\n\n\t\t}\n\n\t} ;\n\n\treturn nth ;\n\n}\n\n",
+    "static": true,
+    "longname": "src/nth.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 13,
+    "kind": "function",
+    "name": "__nth__",
+    "memberof": "src/nth.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/nth.js~__nth__",
+    "access": null,
+    "export": true,
+    "importPath": "@aureooms/js-fibonacci/src/nth.js",
+    "importStyle": "{__nth__}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "iadd",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "zero",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "one",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 14,
+    "kind": "file",
+    "name": "src/rarray.js",
+    "content": "\nexport function __rarray__ ( add ) {\n\n\t/**\n\t * @param {size} n >= 0\n\t * @param {integer array} a of size n + 1 initialized to [ zero , one , ... ]\n\t */\n\n\tvar rarray = function ( n , a ) {\n\n\t\tif ( a[n] !== undefined ) {\n\t\t\treturn a[n] ;\n\t\t}\n\n\t\treturn ( a[n] = add( rarray( n - 2 , a ) , rarray( n - 1 , a ) ) ) ;\n\n\t} ;\n\n\treturn rarray ;\n\n}\n\n",
+    "static": true,
+    "longname": "src/rarray.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 15,
+    "kind": "function",
+    "name": "__rarray__",
+    "memberof": "src/rarray.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/rarray.js~__rarray__",
+    "access": null,
+    "export": true,
+    "importPath": "@aureooms/js-fibonacci/src/rarray.js",
+    "importStyle": "{__rarray__}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "add",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 16,
+    "kind": "file",
+    "name": "src/rnth.js",
+    "content": "\n/**\n * @param {inplace adder} iadd\n * @param {zero constructor} zero\n * @param {one constructor} one\n */\n\nexport function __rnth__ ( iadd , zero , one ) {\n\n\tvar rnth = function ( n ) {\n\n\t\tif ( n === 0 ) {\n\t\t\treturn zero( ) ;\n\t\t}\n\n\t\tif ( n === 1 ) {\n\t\t\treturn one( ) ;\n\t\t}\n\n\t\treturn iadd( rnth( n - 2 ) , rnth( n - 1 ) ) ;\n\n\t} ;\n\n\treturn rnth ;\n\n}\n\n",
+    "static": true,
+    "longname": "src/rnth.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 17,
+    "kind": "function",
+    "name": "__rnth__",
+    "memberof": "src/rnth.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/rnth.js~__rnth__",
+    "access": null,
+    "export": true,
+    "importPath": "@aureooms/js-fibonacci/src/rnth.js",
+    "importStyle": "{__rnth__}",
+    "description": "",
+    "lineNumber": 8,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "inplace adder"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "iadd",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "zero constructor"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "zero",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "one constructor"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "one",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Infinity",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~NaN",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~undefined",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~null",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Symbol",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Error",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~EvalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~InternalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RangeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~TypeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~URIError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Date",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~String",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~string",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RegExp",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 49,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 50,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 54,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Map",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 55,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Set",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 56,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 57,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 58,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 59,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~DataView",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 60,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~JSON",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 61,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Promise",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 62,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Generator",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 63,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 64,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Reflect",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 65,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Proxy",
+    "access": null,
+    "description": "",
+    "lineNumber": 193,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 67,
+    "kind": "external",
+    "name": "CanvasRenderingContext2D",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 68,
+    "kind": "external",
+    "name": "DocumentFragment",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 69,
+    "kind": "external",
+    "name": "Element",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Element",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~Element",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 70,
+    "kind": "external",
+    "name": "Event",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Event",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~Event",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 71,
+    "kind": "external",
+    "name": "Node",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Node",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~Node",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 72,
+    "kind": "external",
+    "name": "NodeList",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~NodeList",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 73,
+    "kind": "external",
+    "name": "XMLHttpRequest",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 74,
+    "kind": "external",
+    "name": "AudioContext",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~AudioContext",
+    "access": null,
+    "description": "",
+    "lineNumber": 34,
+    "builtinExternal": true
+  }
+]
