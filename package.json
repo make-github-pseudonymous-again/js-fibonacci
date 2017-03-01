@@ -1,34 +1,63 @@
 {
-	"description": "fibonacci numbers code bricks for JavaScript",
-	"version": "2.0.2",
-	"devDependencies": {
-		"@aureooms/js-array": "^3.1.0",
-		"@aureooms/js-number": "^2.1.0",
-		"aureooms-node-package": "^6.0.1"
-	},
-	"main": "js/dist/fibonacci.js",
-	"author": "aureooms",
-	"dependencies": {},
-	"scripts": {
-		"build": "./node_modules/.bin/aureooms-node-package-build",
-		"test": "./node_modules/.bin/aureooms-node-package-test",
-		"doc": "./node_modules/.bin/groc"
-	},
-	"keywords": [
-		"bricks",
-		"fibonacci",
-		"javascript",
-		"js",
-		"numbers"
-	],
-	"name": "@aureooms/js-fibonacci",
-	"license": "AGPL-3.0",
-	"bugs": {
-		"url": "https://github.com/aureooms/js-fibonacci/issues"
-	},
-	"repository": {
-		"url": "https://github.com/aureooms/js-fibonacci.git",
-		"type": "git"
-	},
-	"homepage": "http://aureooms.github.io/js-fibonacci/"
+  "name": "@aureooms/js-fibonacci",
+  "description": "Fibonacci numbers for JavaScript",
+  "version": "2.0.2",
+  "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
+  "ava": {
+    "require": [
+      "babel-polyfill",
+      "babel-register"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "env": {
+      "development": {
+        "sourceMaps": "inline"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/aureooms/js-fibonacci/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@aureooms/js-array": "^4.0.0",
+    "@aureooms/js-functools": "^2.0.3",
+    "@aureooms/js-itertools": "^3.1.1",
+    "@aureooms/js-number": "^3.0.0",
+    "ava": "^0.18.2",
+    "babel-cli": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.1.10",
+    "codeclimate-test-reporter": "^0.4.1",
+    "coveralls": "^2.11.16",
+    "esdoc": "^0.5.2",
+    "nyc": "^10.1.2"
+  },
+  "homepage": "https://aureooms.github.io/js-fibonacci",
+  "keywords": [
+    "algorithms",
+    "computer science",
+    "fibonacci",
+    "integer sequences",
+    "javascript",
+    "js",
+    "number theory",
+    "numbers"
+  ],
+  "license": "AGPL-3.0",
+  "main": "lib/index.js",
+  "repository": {
+    "url": "https://github.com/aureooms/js-fibonacci.git",
+    "type": "git"
+  },
+  "scripts": {
+    "build": "babel src -d lib",
+    "cover": "nyc --reporter=lcov npm test",
+    "prepublish": "npm run build",
+    "test": "ava ./test/src --concurrency 8"
+  }
 }

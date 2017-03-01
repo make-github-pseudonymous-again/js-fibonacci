@@ -1,2 +1,0 @@
-
-// waiting for es6
