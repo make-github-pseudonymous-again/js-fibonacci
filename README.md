@@ -1,6 +1,8 @@
 [js-fibonacci](http://aureooms.github.io/js-fibonacci)
 ==
 
+<img src="https://imgs.xkcd.com/comics/alone.png" width="864">
+
 fibonacci numbers code bricks for JavaScript
 
 [![License](https://img.shields.io/github/license/aureooms/js-fibonacci.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-fibonacci/master/LICENSE)
