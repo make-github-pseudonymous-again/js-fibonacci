@@ -1,7 +1,7 @@
 {
   "name": "@aureooms/js-fibonacci",
   "description": "Fibonacci numbers for JavaScript",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
   "ava": {
     "require": [
