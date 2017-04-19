@@ -24,6 +24,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "@aureooms/js-fibonacci/src/generator.js~__generator__",
+    "function/index.html#static-function-__generator__",
+    "<span>__generator__</span> <span class=\"search-result-import-path\">@aureooms/js-fibonacci/src/generator.js</span>",
+    "function"
+  ],
+  [
     "@aureooms/js-fibonacci/src/matrix.js~__matrix__",
     "function/index.html#static-function-__matrix__",
     "<span>__matrix__</span> <span class=\"search-result-import-path\">@aureooms/js-fibonacci/src/matrix.js</span>",

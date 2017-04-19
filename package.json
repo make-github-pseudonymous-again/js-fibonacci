@@ -1,7 +1,7 @@
 {
   "name": "@aureooms/js-fibonacci",
   "description": "Fibonacci numbers for JavaScript",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
   "ava": {
     "require": [
@@ -28,14 +28,14 @@
     "@aureooms/js-functools": "^2.0.3",
     "@aureooms/js-itertools": "^3.1.1",
     "@aureooms/js-number": "^3.0.0",
-    "ava": "^0.18.2",
-    "babel-cli": "^6.23.0",
+    "ava": "^0.19.1",
+    "babel-cli": "^6.24.1",
     "babel-polyfill": "^6.23.0",
-    "babel-preset-env": "^1.1.10",
+    "babel-preset-env": "^1.4.0",
     "codeclimate-test-reporter": "^0.4.1",
-    "coveralls": "^2.11.16",
+    "coveralls": "^2.13.0",
     "esdoc": "^0.5.2",
-    "nyc": "^10.1.2"
+    "nyc": "^10.2.0"
   },
   "homepage": "https://aureooms.github.io/js-fibonacci",
   "keywords": [

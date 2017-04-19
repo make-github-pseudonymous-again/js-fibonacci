@@ -38,6 +38,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__array__">__array__</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__callback__">__callback__</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__formula__">__formula__</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__generator__">__generator__</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__matrix__">__matrix__</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__nth__">__nth__</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-__rarray__">__rarray__</a></span></span></li>
@@ -48,8 +49,36 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/generator.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
-// waiting for es6
-// TODO it&apos;s 2017, it&apos;s there, do it!
+
+export function __generator__ ( iadd , zero , one ) {
+
+	const generator = function* ( ) {
+
+		let a = zero( ) ;
+
+		yield a;
+
+		let b = one( ) ;
+
+		yield b;
+
+		while ( true ) {
+
+			a = iadd( a , b ) ;
+
+			yield a;
+
+			b = iadd( b , a ) ;
+
+			yield b;
+
+		}
+
+	} ;
+
+	return generator ;
+
+}
 </code></pre>
 
 </div>

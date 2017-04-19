@@ -1,6 +1,6 @@
 {
-  "coverage": "25%",
-  "expectCount": 8,
+  "coverage": "22.22%",
+  "expectCount": 9,
   "actualCount": 2,
   "files": {
     "src/Iter.js": {
@@ -28,6 +28,13 @@
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
+    },
+    "src/generator.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
     },
     "src/matrix.js": {
       "expectCount": 1,
