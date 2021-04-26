@@ -1,12 +1,12 @@
-[@aureooms/js-fibonacci](https://aureooms.github.io/js-fibonacci)
+[@aureooms/js-fibonacci](https://make-github-pseudonymous-again.github.io/js-fibonacci)
 ==
 
 <img src="https://imgs.xkcd.com/comics/alone.png" width="864">
 
 Fibonacci numbers for JavaScript.
-See [docs](https://aureooms.github.io/js-fibonacci).
-Parent is [@aureooms/js-algorithms](https://aureooms.github.io/js-algorithms).
-<!--Parent is [@aureooms/js-integer-sequences](https://aureooms.github.io/js-integer-sequences).-->
+See [docs](https://make-github-pseudonymous-again.github.io/js-fibonacci).
+Parent is [@aureooms/js-algorithms](https://make-github-pseudonymous-again.github.io/js-algorithms).
+<!--Parent is [@aureooms/js-integer-sequences](https://make-github-pseudonymous-again.github.io/js-integer-sequences).-->
 
 [![License](https://img.shields.io/github/license/aureooms/js-fibonacci.svg)](https://raw.githubusercontent.com/aureooms/js-fibonacci/master/LICENSE)
 [![Version](https://img.shields.io/npm/v/@aureooms/js-fibonacci.svg)](https://www.npmjs.org/package/@aureooms/js-fibonacci)
@@ -20,5 +20,5 @@ Parent is [@aureooms/js-algorithms](https://aureooms.github.io/js-algorithms).
 [![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-fibonacci.svg)](https://codeclimate.com/github/aureooms/js-fibonacci/trends/churn)
 [![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-fibonacci/master.svg)](https://codecov.io/gh/aureooms/js-fibonacci)
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-fibonacci.svg)](https://codeclimate.com/github/aureooms/js-fibonacci/trends/technical_debt)
-[![Documentation](https://aureooms.github.io/js-fibonacci/badge.svg)](https://aureooms.github.io/js-fibonacci/source.html)
+[![Documentation](https://make-github-pseudonymous-again.github.io/js-fibonacci/badge.svg)](https://make-github-pseudonymous-again.github.io/js-fibonacci/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-fibonacci)](https://bundlephobia.com/result?p=@aureooms/js-fibonacci)
