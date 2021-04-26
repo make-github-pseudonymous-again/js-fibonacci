@@ -25,7 +25,7 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/aureooms/js-fibonacci/issues"
+    "url": "https://github.com/make-github-pseudonymous-again/js-fibonacci/issues"
   },
   "dependencies": {},
   "devDependencies": {
@@ -64,7 +64,7 @@
   "license": "AGPL-3.0",
   "main": "lib/index.js",
   "repository": {
-    "url": "https://github.com/aureooms/js-fibonacci.git",
+    "url": "https://github.com/make-github-pseudonymous-again/js-fibonacci.git",
     "type": "git"
   },
   "scripts": {
