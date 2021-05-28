@@ -1,6 +1,6 @@
 import test from 'ava';
 import * as number from '@aureooms/js-number' ;
-import { range } from '@aureooms/js-itertools' ;
+import { range } from '@iterable-iterator/range' ;
 
 import * as fibonacci from '../../src';
 

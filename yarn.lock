@@ -7,30 +7,10 @@
   resolved "https://registry.yarnpkg.com/@aureooms/js-array/-/js-array-4.0.0.tgz#ea64b7c788644f40bbb92259a6098ac14a4eca6c"
   integrity sha1-6mS3x4hkT0C7uSJZpgmKwUpOymw=
 
-"@aureooms/js-collections-deque@^6.0.1":
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-collections-deque/-/js-collections-deque-6.0.2.tgz#363671637922a236b3d9edde579029e3e72f8065"
-  integrity sha512-npl6BXz1pqzSOqMiqOnELpxk7rOwyc7yEcUnFS+bm6jE+fHV5OxV+sH15EgzWAe8mtuh0GBE1KHP/u3e0lGEjg==
-  dependencies:
-    "@aureooms/js-error" "^5.0.3"
-
-"@aureooms/js-error@^5.0.2", "@aureooms/js-error@^5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-error/-/js-error-5.0.3.tgz#e4cb52e3525028e4725a5886663a67a0749abf6b"
-  integrity sha512-hGLMr9UIgPubX72V7vS69N8toMoK52emuA9jV/EOleK4m7HUF0HjdssNXZytd+udyY3996CBre89MOgTEn0Udw==
-
 "@aureooms/js-functools@2.0.3":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@aureooms/js-functools/-/js-functools-2.0.3.tgz#5139d6245278193da4cf21c44666797bf40a1d6e"
   integrity sha1-UTnWJFJ4GT2kzyHERmZ5e/QKHW4=
-
-"@aureooms/js-itertools@5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-itertools/-/js-itertools-5.0.1.tgz#73af47b0a710073730fccde6c57431a9178d1bea"
-  integrity sha512-EBmA0EiY49MSu7M6eCZvUyEhV79bvIQDg/LL3bfUG8fxhL4IeBLbgYc41a4/LunD5mLFG8ZQna/Z/oUjr4fUuQ==
-  dependencies:
-    "@aureooms/js-collections-deque" "^6.0.1"
-    "@aureooms/js-error" "^5.0.2"
 
 "@aureooms/js-number@4.0.0":
   version "4.0.0"
@@ -960,6 +940,11 @@
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
+
+"@iterable-iterator/range@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@iterable-iterator/range/-/range-1.0.0.tgz#5b3255710e3e0d174a82e38024dc2af3c1aeee25"
+  integrity sha512-rFgziHtzWs/Zl1c5SfkAbUZzXvqvyeMtjsrwdkvXFQ1FCCXmzFjaMOKpr++wFuoV83XzZuiJ6lyHNEd3CSIyTg==
 
 "@nicolo-ribaudo/chokidar-2@2.1.8-no-fsevents":
   version "2.1.8-no-fsevents"
