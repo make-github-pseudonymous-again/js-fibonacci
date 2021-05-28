@@ -5,10 +5,10 @@ or [npm](https://github.com/npm/npm).
 
 ### jspm
 ```terminal
-jspm install npm:@aureooms/js-fibonacci
+jspm install npm:@integer-sequence/fibonacci
 ```
 
 ### npm
 ```terminal
-npm install @aureooms/js-fibonacci --save
+npm install @integer-sequence/fibonacci --save
 ```

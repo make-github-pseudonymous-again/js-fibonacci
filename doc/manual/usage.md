@@ -9,7 +9,7 @@ import '@babel/polyfill' ;
 
 Then
 ```js
-const fibonacci = require( '@aureooms/js-fibonacci' ) ;
+const fibonacci = require( '@integer-sequence/fibonacci' ) ;
 // or
-import * as fibonacci from '@aureooms/js-fibonacci' ;
+import * as fibonacci from '@integer-sequence/fibonacci' ;
 ```

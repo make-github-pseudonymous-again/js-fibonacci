@@ -1,8 +1,8 @@
 {
-  "name": "@aureooms/js-fibonacci",
+  "name": "@integer-sequence/fibonacci",
   "description": "Fibonacci numbers for JavaScript",
   "version": "4.0.0",
-  "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
+  "author": "make-github-pseudonymous-again",
   "ava": {
     "files": [
       "test/src/**/*"
@@ -25,7 +25,7 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/make-github-pseudonymous-again/js-fibonacci/issues"
+    "url": "https://github.com/integer-sequence/fibonacci/issues"
   },
   "dependencies": {},
   "devDependencies": {
@@ -50,7 +50,7 @@
   "files": [
     "lib"
   ],
-  "homepage": "https://make-github-pseudonymous-again.github.io/js-fibonacci",
+  "homepage": "https://integer-sequence.github.io/fibonacci",
   "keywords": [
     "algorithms",
     "computer science",
@@ -64,7 +64,7 @@
   "license": "AGPL-3.0",
   "main": "lib/index.js",
   "repository": {
-    "url": "https://github.com/make-github-pseudonymous-again/js-fibonacci.git",
+    "url": "https://github.com/integer-sequence/fibonacci.git",
     "type": "git"
   },
   "scripts": {
