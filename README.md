@@ -1,7 +1,12 @@
 [@integer-sequence/fibonacci](https://integer-sequence.github.io/fibonacci)
 ==
 
-<img src="https://imgs.xkcd.com/comics/alone.png" width="864">
+<p align="center">
+<a href="https://xkcd.com/289">
+<img src="https://imgs.xkcd.com/comics/alone.png" width="700">
+</a><br/>
+© <a href="https://xkcd.com">xkcd.com</a>
+</p>
 
 Fibonacci numbers for JavaScript.
 See [docs](https://integer-sequence.github.io/fibonacci).
