@@ -1,5 +1,5 @@
 import test from 'ava';
-import * as array from "@aureooms/js-array" ;
+import {alloc} from "@aureooms/js-array" ;
 import * as number from "@aureooms/js-number" ;
 
 import * as fibonacci from '../../src';
@@ -10,7 +10,7 @@ test( "array" , t => {
 
 	n = 46 ;
 
-	a = array.alloc( n + 1 ) ;
+	a = alloc( n + 1 ) ;
 	a[0] = number.$0( ) ;
 	a[1] = number.$1( ) ;
 
